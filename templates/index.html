@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venue Booking</title>
+    <!-- FullCalendar CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.min.css" rel="stylesheet">
+    <style>
+        .fc-event {
+            background-color: #3788d8;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Venue Booking System</h1>
+    <p>This is the homepage.</p>
+    <div id="calendar"></div>
+
+    <!-- FullCalendar JS -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                events: '/allbookings',
+                eventClick: function(info) {
+                    alert('Event: ' + info.event.title + '\nDescription: ' + info.event.extendedProps.description);
+                }
+            });
+
+            calendar.render();
+        });
+    </script>
+</body>
+</html>
