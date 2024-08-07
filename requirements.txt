@@ -65,7 +65,6 @@ SQLAlchemy==2.0.31
 sqlparse==0.5.1
 tomli==2.0.1
 Twisted==24.3.0
-twisted-iocpsupport==1.0.4
 txaio==23.1.1
 typing_extensions==4.12.2
 tzdata==2024.1
